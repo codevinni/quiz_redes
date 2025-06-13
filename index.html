@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Quiz Redes de Computadores</title>
     <style>
@@ -25,7 +24,6 @@
     </div>
 
     <script>
-        // Todas as questões do quiz aqui
         const questions = [
             {
                 "question": "1. Qual é a principal função do BGP na Internet?",
@@ -36,449 +34,437 @@
                     "d": "Realizar roteamento entre Sistemas Autônomos (ASs)"
                 },
                 "correct": "d",
-                "explanation": "O BGP é o protocolo de roteamento entre domínios (interdomínio) usado para conectar diferentes ASs na Internet."
+                "explanation": "O BGP é o protocolo de roteamento entre domínios (interdomínio) usado para conectar diferentes ASs na Internet. Ele é essencial para a comunicação entre grandes redes independentes."
             },
-    {
-        "question": "1. Qual é a principal função do BGP na Internet?",
-        "options": {
-            "a": "Realizar roteamento dentro de um único Sistema Autônomo",
-            "b": "Gerenciar endereçamento IP local",
-            "c": "Configurar switches em uma LAN",
-            "d": "Realizar roteamento entre Sistemas Autônomos (ASs)"
-        },
-        "correct": "d",
-        "explanation": "O BGP é o protocolo de roteamento entre domínios (interdomínio) usado para conectar diferentes ASs na Internet. Ele é essencial para a comunicação entre grandes redes independentes."
-    },
-    {
-        "question": "2. O BGP é classificado como um protocolo de roteamento:",
-        "options": {
-            "a": "Interno e baseado em estado de enlace",
-            "b": "Externo e baseado em vetor de caminho",
-            "c": "Interno e baseado em vetor de distância",
-            "d": "Externo e baseado em estado de enlace"
-        },
-        "correct": "b",
-        "explanation": "O BGP usa a técnica de vetor de caminho (path vector) e é um protocolo de roteamento externo (EGP), usado entre sistemas autônomos. Ele armazena o caminho completo (AS_PATH) de cada rota."
-    },
-    {
-        "question": "3. Um dos motivos pelo qual o BGP não usa o menor número de saltos como métrica principal é:",
-        "options": {
-            "a": "Porque é muito complexo calcular saltos",
-            "b": "Porque não é compatível com TCP",
-            "c": "Permitir decisões baseadas em políticas administrativas",
-            "d": "Porque não funciona com IPv6"
-        },
-        "correct": "c",
-        "explanation": "O BGP foi projetado para ser altamente configurável com base em políticas, como preferências de custo, segurança ou acordos comerciais, e não apenas eficiência de rede."
-    },
-    {
-        "question": "4. O que o campo AS_PATH do BGP registra?",
-        "options": {
-            "a": "O número de roteadores atravessados",
-            "b": "A sequência de Sistemas Autônomos atravessados pela rota",
-            "c": "O caminho físico dos cabos de rede",
-            "d": "Os endereços IP de todos os dispositivos no caminho"
-        },
-        "correct": "b",
-        "explanation": "O campo AS_PATH contém a lista de ASs pelos quais uma rota passou, ajudando a evitar loops e a tomar decisões de roteamento baseadas em política."
-    },
-    {
-        "question": "5. Qual das seguintes afirmações é verdadeira sobre o BGP?",
-        "options": {
-            "a": "Ele utiliza TCP para garantir entrega confiável das mensagens de roteamento",
-            "b": "Ele usa UDP para maior velocidade",
-            "c": "Ele opera apenas em redes locais",
-            "d": "Ele não suporta IPv6"
-        },
-        "correct": "a",
-        "explanation": "Ao contrário de protocolos internos como OSPF, o BGP usa TCP (porta 179) para garantir confiabilidade e ordenação de mensagens entre os pares."
-    },
-    {
-        "question": "6. Qual algoritmo de roteamento é usado pelo OSPF?",
-        "options": {
-            "a": "Bellman-Ford",
-            "b": "Floyd-Warshall",
-            "c": "Kruskal",
-            "d": "Dijkstra (caminho de custo mínimo)"
-        },
-        "correct": "d",
-        "explanation": "O OSPF é um protocolo de estado de enlace (link-state) que usa o algoritmo de Dijkstra para calcular o caminho mais curto com base nos custos dos enlaces."
-    },
-    {
-        "question": "7. Por que o OSPF divide redes grandes em áreas?",
-        "options": {
-            "a": "Para aumentar a complexidade",
-            "b": "Para usar diferentes algoritmos em cada área",
-            "c": "Para melhorar a escalabilidade e reduzir o tráfego de atualização",
-            "d": "Para permitir o uso de diferentes protocolos em cada área"
-        },
-        "correct": "c",
-        "explanation": "A divisão em áreas permite que o OSPF minimize o escopo das atualizações de link-state, melhorando a eficiência e a organização da rede."
-    },
-    {
-        "question": "8. Em um domínio OSPF, a área 0 é conhecida como:",
-        "options": {
-            "a": "Área backbone",
-            "b": "Área estúpida",
-            "c": "Área terminal",
-            "d": "Área raiz"
-        },
-        "correct": "a",
-        "explanation": "Todas as áreas OSPF devem se conectar à área 0 (backbone), que interconecta outras áreas e garante a integridade do roteamento."
-    },
-    {
-        "question": "9. O MPLS é chamado de tecnologia de camada '2,5' porque:",
-        "options": {
-            "a": "É mais lento que a camada 2 e mais rápido que a camada 3",
-            "b": "Opera entre as camadas de enlace (2) e de rede (3)",
-            "c": "Foi criado em 2005 (meio da década)",
-            "d": "Usa endereços de 2,5 bytes"
-        },
-        "correct": "b",
-        "explanation": "O MPLS atua entre as camadas 2 e 3 do modelo OSI, utilizando rótulos (labels) em vez de endereços IP para tomar decisões de encaminhamento mais rápidas."
-    },
-    {
-        "question": "10. O que é uma FEC (Forwarding Equivalence Class) no contexto do MPLS?",
-        "options": {
-            "a": "Um grupo de pacotes que recebem o mesmo tratamento de roteamento",
-            "b": "Uma classe de endereços IP especiais",
-            "c": "Um tipo de cabo de rede",
-            "d": "Um protocolo de roteamento alternativo"
-        },
-        "correct": "a",
-        "explanation": "No MPLS, pacotes com as mesmas características (como origem, destino, tipo de serviço) são agrupados em uma FEC, e todos seguem o mesmo caminho baseado no rótulo."
-    },
-    {
-        "question": "11. O que é congestionamento em redes?",
-        "options": {
-            "a": "Quando um roteador falha",
-            "b": "Quando há pacotes demais para a capacidade da rede",
-            "c": "Quando o DNS não responde",
-            "d": "Quando há um loop de roteamento"
-        },
-        "correct": "b",
-        "explanation": "O congestionamento ocorre quando o número de pacotes excede a capacidade da rede de processá-los, causando perda, atraso e queda de desempenho."
-    },
-    {
-        "question": "12. O que é 'colapso de congestionamento'?",
-        "options": {
-            "a": "Quando a rede para completamente",
-            "b": "Quando há muitas retransmissões, o desempenho despenca",
-            "c": "Quando os roteadores superaquecem",
-            "d": "Quando os cabos se desconectam"
-        },
-        "correct": "b",
-        "explanation": "Um colapso ocorre quando o tráfego continua aumentando, mas o rendimento útil (goodput) cai, devido à sobrecarga de retransmissões e descartes."
-    },
-    {
-        "question": "13. Controle de congestionamento é responsabilidade de qual camada?",
-        "options": {
-            "a": "Apenas camada física",
-            "b": "Apenas camada de aplicação",
-            "c": "Camadas de transporte e rede",
-            "d": "Apenas camada de enlace"
-        },
-        "correct": "c",
-        "explanation": "A camada de rede detecta o congestionamento, e a de transporte pode agir para reduzir o envio de dados."
-    },
-    {
-        "question": "14. Qual técnica evita o congestionamento antes que ocorra?",
-        "options": {
-            "a": "Controle de acesso",
-            "b": "Corte de carga",
-            "c": "ECN",
-            "d": "RED"
-        },
-        "correct": "a",
-        "explanation": "Impede o estabelecimento de novos circuitos virtuais se não houver capacidade disponível, evitando o agravamento do congestionamento."
-    },
-    {
-        "question": "15. Qual técnica atua de forma corretiva após o congestionamento?",
-        "options": {
-            "a": "Controle de acesso",
-            "b": "Prevenção",
-            "c": "Corte de carga",
-            "d": "Alocação estática"
-        },
-        "correct": "c",
-        "explanation": "Quando o congestionamento é inevitável, a rede começa a descartar pacotes seletivamente para evitar colapso total."
-    },
-    {
-        "question": "16. O que é 'roteamento com conhecimento do tráfego'?",
-        "options": {
-            "a": "Usar IA para prever congestionamento",
-            "b": "Calcula caminhos com base na carga atual",
-            "c": "Rotear apenas tráfego importante",
-            "d": "Ignorar rotas congestionadas"
-        },
-        "correct": "b",
-        "explanation": "Essa técnica ajusta rotas de acordo com o congestionamento detectado nos enlaces, tentando evitar pontos críticos."
-    },
-    {
-        "question": "17. O que é controle de acesso?",
-        "options": {
-            "a": "Limitar usuários na rede",
-            "b": "Rejeitar novas conexões se causarem congestionamento",
-            "c": "Filtrar pacotes maliciosos",
-            "d": "Controlar acesso físico aos roteadores"
-        },
-        "correct": "b",
-        "explanation": "Em redes de circuito virtual, a conexão só é aceita se a rede tiver recursos suficientes para mantê-la sem sobrecarga."
-    },
-    {
-        "question": "18. Qual técnica monitora a fila do roteador para prever congestionamento?",
-        "options": {
-            "a": "RED",
-            "b": "ECN",
-            "c": "EWMA",
-            "d": "FIFO"
-        },
-        "correct": "c",
-        "explanation": "A média móvel ponderada exponencialmente calcula o atraso de enfileiramento, ajudando a detectar congestionamento iminente."
-    },
-    {
-        "question": "19. O que representa a média móvel ponderada exponencialmente (EWMA)?",
-        "options": {
-            "a": "O número absoluto de pacotes na fila",
-            "b": "A capacidade total do buffer",
-            "c": "Média do atraso de fila, suavizada",
-            "d": "O tempo exato de processamento"
-        },
-        "correct": "c",
-        "explanation": "Essa média suaviza variações abruptas no tamanho da fila, sendo usada para estimar a latência com precisão."
-    },
-    {
-        "question": "20. Qual técnica envia mensagens de aviso aos transmissores sobre congestionamento?",
-        "options": {
-            "a": "RED",
-            "b": "ECN",
-            "c": "FIFO",
-            "d": "WFQ"
-        },
-        "correct": "b",
-        "explanation": "O roteador marca o pacote (sem descartá-lo) para sinalizar congestionamento; o receptor informa o emissor na resposta."
-    },
-    {
-        "question": "21. O que é RED (Random Early Detection)?",
-        "options": {
-            "a": "Priorização de pacotes vermelhos (urgentes)",
-            "b": "Rotear pacotes por caminhos alternativos",
-            "c": "Descarte aleatório de pacotes antes de lotar o buffer",
-            "d": "Marcação explícita de pacotes"
-        },
-        "correct": "c",
-        "explanation": "O objetivo é prevenir congestionamento descartando pacotes quando a média da fila ultrapassa um limite."
-    },
-    {
-        "question": "22. Qual é o princípio do corte de carga?",
-        "options": {
-            "a": "Adicionar mais banda quando necessário",
-            "b": "Reduzir a velocidade de transmissão",
-            "c": "Descartar pacotes intencionalmente",
-            "d": "Reiniciar roteadores congestionados"
-        },
-        "correct": "c",
-        "explanation": "Técnica usada como último recurso quando outras medidas falham; exige políticas inteligentes de descarte."
-    },
-    {
-        "question": "23. Na política de descarte 'do leite', o que acontece?",
-        "options": {
-            "a": "Pacotes novos são descartados",
-            "b": "Pacotes grandes têm prioridade",
-            "c": "Pacotes antigos são descartados",
-            "d": "Pacotes são descartados aleatoriamente"
-        },
-        "correct": "c",
-        "explanation": "Prioriza pacotes novos, como em transmissões em tempo real (áudio/vídeo), onde pacotes atrasados perdem valor."
-    },
-    {
-        "question": "24. Quais são os quatro parâmetros de QoS?",
-        "options": {
-            "a": "Velocidade, confiabilidade, custo, segurança",
-            "b": "Largura de banda, atraso, flutuação, perda",
-            "c": "Tamanho, prioridade, origem, destino",
-            "d": "Latência, vazão, checksum, TTL"
-        },
-        "correct": "b",
-        "explanation": "Esses parâmetros definem o desempenho de um fluxo: quanto pode ser enviado, em quanto tempo, com que regularidade e sem perdas."
-    },
-    {
-        "question": "25. Qual aplicação tem os requisitos mais rígidos de flutuação e atraso?",
-        "options": {
-            "a": "Email",
-            "b": "Videoconferência",
-            "c": "Download de arquivos",
-            "d": "Navegação web"
-        },
-        "correct": "b",
-        "explanation": "Precisa de baixa latência e baixa flutuação (jitter) para manter a sincronia entre áudio e vídeo em tempo real."
-    },
-    {
-        "question": "26. O que é sobreprovisionamento?",
-        "options": {
-            "a": "Usar menos capacidade do que a necessária",
-            "b": "Usar mais capacidade do que a necessária",
-            "c": "Alocar recursos dinamicamente",
-            "d": "Compartilhar banda entre usuários"
-        },
-        "correct": "b",
-        "explanation": "Garante QoS com sobras de recursos, mas é uma solução cara e inflexível, ideal apenas para casos críticos como telefonia."
-    },
-    {
-        "question": "27. O que é um SLA (Service Level Agreement)?",
-        "options": {
-            "a": "Um protocolo de roteamento",
-            "b": "Um tipo de cabo de rede",
-            "c": "Acordo de requisitos entre provedor e cliente",
-            "d": "Um algoritmo de escalonamento"
-        },
-        "correct": "c",
-        "explanation": "Define limites como taxa, latência e perdas que o cliente pode usar e que a rede se compromete a respeitar."
-    },
-    {
-        "question": "28. Qual é a função principal do leaky bucket?",
-        "options": {
-            "a": "Armazenar pacotes indefinidamente",
-            "b": "Limitar tráfego a uma taxa constante",
-            "c": "Priorizar pacotes importantes",
-            "d": "Detectar intrusões na rede"
-        },
-        "correct": "b",
-        "explanation": "A água (dados) sai do balde a uma taxa fixa. Se o balde está cheio, novos pacotes são descartados ou enfileirados."
-    },
-    {
-        "question": "29. Qual é a vantagem do token bucket sobre o leaky bucket?",
-        "options": {
-            "a": "É mais simples de implementar",
-            "b": "Permite rajadas dentro de limite",
-            "c": "Não requer configuração",
-            "d": "Funciona sem buffers"
-        },
-        "correct": "b",
-        "explanation": "Embora controle a taxa média, o token bucket tolera rajadas curtas, desde que não ultrapassem a capacidade do balde."
-    },
-    {
-        "question": "30. Qual unidade é usada no token bucket quando os pacotes têm tamanhos variados?",
-        "options": {
-            "a": "Pacotes",
-            "b": "Bits",
-            "c": "Bytes",
-            "d": "Segundos"
-        },
-        "correct": "c",
-        "explanation": "Em redes com pacotes de tamanho variável, o controle precisa ser feito em bytes, não em pacotes."
-    },
-    {
-        "question": "31. O que acontece se o token bucket estiver vazio?",
-        "options": {
-            "a": "Os pacotes são descartados",
-            "b": "O sistema para de funcionar",
-            "c": "O envio aguarda novos tokens",
-            "d": "A rede entra em modo de emergência"
-        },
-        "correct": "c",
-        "explanation": "Sem tokens, não é permitido enviar novos pacotes até que mais tokens (direito de envio) sejam gerados."
-    },
-    {
-        "question": "32. Por que se usa um segundo token bucket após o primeiro em alguns casos?",
-        "options": {
-            "a": "Para aumentar a capacidade total",
-            "b": "Para suavizar a taxa de pico",
-            "c": "Para priorizar diferentes fluxos",
-            "d": "Para compensar perdas"
-        },
-        "correct": "b",
-        "explanation": "Isso permite que o tráfego de saída seja ainda mais regular, impedindo rajadas maiores do que o desejado."
-    },
-    {
-        "question": "33. Qual é a função do algoritmo de escalonamento?",
-        "options": {
-            "a": "Criptografar pacotes",
-            "b": "Comprimir dados",
-            "c": "Determinar a ordem de envio dos pacotes",
-            "d": "Detectar erros"
-        },
-        "correct": "c",
-        "explanation": "Ele organiza os pacotes na fila e decide quais são transmitidos primeiro, impactando diretamente o QoS."
-    },
-    {
-        "question": "34. Como funciona o escalonamento FIFO?",
-        "options": {
-            "a": "Prioriza pacotes pequenos",
-            "b": "Envia pacotes por prioridade",
-            "c": "Envia os pacotes pela ordem de chegada",
-            "d": "Balanceia entre vários fluxos"
-        },
-        "correct": "c",
-        "explanation": "FIFO é simples, mas não garante QoS. Fluxos agressivos podem prejudicar outros que seguem regras."
-    },
-    {
-        "question": "35. O que é descarte de cauda (tail drop)?",
-        "options": {
-            "a": "Descartar os pacotes mais antigos",
-            "b": "Descartar pacotes aleatoriamente",
-            "c": "Descartar os pacotes que acabaram de chegar",
-            "d": "Descartar pacotes grandes"
-        },
-        "correct": "c",
-        "explanation": "Quando o buffer enche, os pacotes mais recentes são descartados, o que pode afetar fluxos interativos."
-    },
-    {
-        "question": "36. O que é enfileiramento com rodízio de filas?",
-        "options": {
-            "a": "Uma fila por prioridade",
-            "b": "Uma fila por tipo de protocolo",
-            "c": "Cada fluxo tem uma fila e envia um pacote por rodada",
-            "d": "Filas ordenadas por tamanho"
-        },
-        "correct": "c",
-        "explanation": "Garante justiça entre os fluxos, evitando que um monopolize a fila."
-    },
-    {
-        "question": "37. Qual é a principal falha do rodízio simples de filas?",
-        "options": {
-            "a": "Favorece quem envia muitos pacotes pequenos",
-            "b": "É muito complexo de implementar",
-            "c": "Favorece quem envia pacotes maiores",
-            "d": "Não funciona com TCP"
-        },
-        "correct": "c",
-        "explanation": "Em rodízio por pacotes, um host que envia pacotes grandes consome mais largura de banda por rodada."
-    },
-    {
-        "question": "38. O que o algoritmo WFQ (Weighted Fair Queueing) adiciona ao rodízio de filas?",
-        "options": {
-            "a": "Criptografia",
-            "b": "Compactação de dados",
-            "c": "Peso aos fluxos para distribuição proporcional",
-            "d": "Controle de congestionamento"
-        },
-        "correct": "c",
-        "explanation": "Fluxos com maior peso recebem mais recursos, ideal para dar prioridade a serviços críticos."
-    },
-    {
-        "question": "39. Qual é a desvantagem prática do WFQ?",
-        "options": {
-            "a": "Não funciona com IPv6",
-            "b": "Requer O(logN) por pacote",
-            "c": "É incompatível com TCP",
-            "d": "Não suporta QoS"
-        },
-        "correct": "b",
-        "explanation": "O ordenamento das filas por hora de término exige maior custo computacional, dificultando sua escalabilidade."
-    },
-    {
-        "question": "40. O que é o escalonamento por prioridade?",
-        "options": {
-            "a": "Envia pacotes por ordem de tamanho",
-            "b": "Prioriza pacotes conforme marcação de importância",
-            "c": "Balanceia carga entre interfaces",
-            "d": "Alterna entre protocolos diferentes"
-        },
-        "correct": "b",
-        "explanation": "Pacotes com alta prioridade são sempre enviados antes, mas pode causar inanição dos de menor prioridade."
-    }
-     // Adicione todas as outras questões aqui...
+            {
+                "question": "2. O BGP é classificado como um protocolo de roteamento:",
+                "options": {
+                    "a": "Interno e baseado em estado de enlace",
+                    "b": "Externo e baseado em vetor de caminho",
+                    "c": "Interno e baseado em vetor de distância",
+                    "d": "Externo e baseado em estado de enlace"
+                },
+                "correct": "b",
+                "explanation": "O BGP usa a técnica de vetor de caminho (path vector) e é um protocolo de roteamento externo (EGP), usado entre sistemas autônomos. Ele armazena o caminho completo (AS_PATH) de cada rota."
+            },
+            {
+                "question": "3. Um dos motivos pelo qual o BGP não usa o menor número de saltos como métrica principal é:",
+                "options": {
+                    "a": "Porque é muito complexo calcular saltos",
+                    "b": "Porque não é compatível com TCP",
+                    "c": "Permitir decisões baseadas em políticas administrativas",
+                    "d": "Porque não funciona com IPv6"
+                },
+                "correct": "c",
+                "explanation": "O BGP foi projetado para ser altamente configurável com base em políticas, como preferências de custo, segurança ou acordos comerciais, e não apenas eficiência de rede."
+            },
+            {
+                "question": "4. O que o campo AS_PATH do BGP registra?",
+                "options": {
+                    "a": "O número de roteadores atravessados",
+                    "b": "A sequência de Sistemas Autônomos atravessados pela rota",
+                    "c": "O caminho físico dos cabos de rede",
+                    "d": "Os endereços IP de todos os dispositivos no caminho"
+                },
+                "correct": "b",
+                "explanation": "O campo AS_PATH contém a lista de ASs pelos quais uma rota passou, ajudando a evitar loops e a tomar decisões de roteamento baseadas em política."
+            },
+            {
+                "question": "5. Qual das seguintes afirmações é verdadeira sobre o BGP?",
+                "options": {
+                    "a": "Ele utiliza TCP para garantir entrega confiável das mensagens de roteamento",
+                    "b": "Ele usa UDP para maior velocidade",
+                    "c": "Ele opera apenas em redes locais",
+                    "d": "Ele não suporta IPv6"
+                },
+                "correct": "a",
+                "explanation": "Ao contrário de protocolos internos como OSPF, o BGP usa TCP (porta 179) para garantir confiabilidade e ordenação de mensagens entre os pares."
+            },
+            {
+                "question": "6. Qual algoritmo de roteamento é usado pelo OSPF?",
+                "options": {
+                    "a": "Bellman-Ford",
+                    "b": "Floyd-Warshall",
+                    "c": "Kruskal",
+                    "d": "Dijkstra (caminho de custo mínimo)"
+                },
+                "correct": "d",
+                "explanation": "O OSPF é um protocolo de estado de enlace (link-state) que usa o algoritmo de Dijkstra para calcular o caminho mais curto com base nos custos dos enlaces."
+            },
+            {
+                "question": "7. Por que o OSPF divide redes grandes em áreas?",
+                "options": {
+                    "a": "Para aumentar a complexidade",
+                    "b": "Para usar diferentes algoritmos em cada área",
+                    "c": "Para melhorar a escalabilidade e reduzir o tráfego de atualização",
+                    "d": "Para permitir o uso de diferentes protocolos em cada área"
+                },
+                "correct": "c",
+                "explanation": "A divisão em áreas permite que o OSPF minimize o escopo das atualizações de link-state, melhorando a eficiência e a organização da rede."
+            },
+            {
+                "question": "8. Em um domínio OSPF, a área 0 é conhecida como:",
+                "options": {
+                    "a": "Área backbone",
+                    "b": "Área estúpida",
+                    "c": "Área terminal",
+                    "d": "Área raiz"
+                },
+                "correct": "a",
+                "explanation": "Todas as áreas OSPF devem se conectar à área 0 (backbone), que interconecta outras áreas e garante a integridade do roteamento."
+            },
+            {
+                "question": "9. O MPLS é chamado de tecnologia de camada '2,5' porque:",
+                "options": {
+                    "a": "É mais lento que a camada 2 e mais rápido que a camada 3",
+                    "b": "Opera entre as camadas de enlace (2) e de rede (3)",
+                    "c": "Foi criado em 2005 (meio da década)",
+                    "d": "Usa endereços de 2,5 bytes"
+                },
+                "correct": "b",
+                "explanation": "O MPLS atua entre as camadas 2 e 3 do modelo OSI, utilizando rótulos (labels) em vez de endereços IP para tomar decisões de encaminhamento mais rápidas."
+            },
+            {
+                "question": "10. O que é uma FEC (Forwarding Equivalence Class) no contexto do MPLS?",
+                "options": {
+                    "a": "Um grupo de pacotes que recebem o mesmo tratamento de roteamento",
+                    "b": "Uma classe de endereços IP especiais",
+                    "c": "Um tipo de cabo de rede",
+                    "d": "Um protocolo de roteamento alternativo"
+                },
+                "correct": "a",
+                "explanation": "No MPLS, pacotes com as mesmas características (como origem, destino, tipo de serviço) são agrupados em uma FEC, e todos seguem o mesmo caminho baseado no rótulo."
+            },
+            {
+                "question": "11. O que é congestionamento em redes?",
+                "options": {
+                    "a": "Quando um roteador falha",
+                    "b": "Quando há pacotes demais para a capacidade da rede",
+                    "c": "Quando o DNS não responde",
+                    "d": "Quando há um loop de roteamento"
+                },
+                "correct": "b",
+                "explanation": "O congestionamento ocorre quando o número de pacotes excede a capacidade da rede de processá-los, causando perda, atraso e queda de desempenho."
+            },
+            {
+                "question": "12. O que é 'colapso de congestionamento'?",
+                "options": {
+                    "a": "Quando a rede para completamente",
+                    "b": "Quando há muitas retransmissões, o desempenho despenca",
+                    "c": "Quando os roteadores superaquecem",
+                    "d": "Quando os cabos se desconectam"
+                },
+                "correct": "b",
+                "explanation": "Um colapso ocorre quando o tráfego continua aumentando, mas o rendimento útil (goodput) cai, devido à sobrecarga de retransmissões e descartes."
+            },
+            {
+                "question": "13. Controle de congestionamento é responsabilidade de qual camada?",
+                "options": {
+                    "a": "Apenas camada física",
+                    "b": "Apenas camada de aplicação",
+                    "c": "Camadas de transporte e rede",
+                    "d": "Apenas camada de enlace"
+                },
+                "correct": "c",
+                "explanation": "A camada de rede detecta o congestionamento, e a de transporte pode agir para reduzir o envio de dados."
+            },
+            {
+                "question": "14. Qual técnica evita o congestionamento antes que ocorra?",
+                "options": {
+                    "a": "Controle de acesso",
+                    "b": "Corte de carga",
+                    "c": "ECN",
+                    "d": "RED"
+                },
+                "correct": "a",
+                "explanation": "Impede o estabelecimento de novos circuitos virtuais se não houver capacidade disponível, evitando o agravamento do congestionamento."
+            },
+            {
+                "question": "15. Qual técnica atua de forma corretiva após o congestionamento?",
+                "options": {
+                    "a": "Controle de acesso",
+                    "b": "Prevenção",
+                    "c": "Corte de carga",
+                    "d": "Alocação estática"
+                },
+                "correct": "c",
+                "explanation": "Quando o congestionamento é inevitável, a rede começa a descartar pacotes seletivamente para evitar colapso total."
+            },
+            {
+                "question": "16. O que é 'roteamento com conhecimento do tráfego'?",
+                "options": {
+                    "a": "Usar IA para prever congestionamento",
+                    "b": "Calcula caminhos com base na carga atual",
+                    "c": "Rotear apenas tráfego importante",
+                    "d": "Ignorar rotas congestionadas"
+                },
+                "correct": "b",
+                "explanation": "Essa técnica ajusta rotas de acordo com o congestionamento detectado nos enlaces, tentando evitar pontos críticos."
+            },
+            {
+                "question": "17. O que é controle de acesso?",
+                "options": {
+                    "a": "Limitar usuários na rede",
+                    "b": "Rejeitar novas conexões se causarem congestionamento",
+                    "c": "Filtrar pacotes maliciosos",
+                    "d": "Controlar acesso físico aos roteadores"
+                },
+                "correct": "b",
+                "explanation": "Em redes de circuito virtual, a conexão só é aceita se a rede tiver recursos suficientes para mantê-la sem sobrecarga."
+            },
+            {
+                "question": "18. Qual técnica monitora a fila do roteador para prever congestionamento?",
+                "options": {
+                    "a": "RED",
+                    "b": "ECN",
+                    "c": "EWMA",
+                    "d": "FIFO"
+                },
+                "correct": "c",
+                "explanation": "A média móvel ponderada exponencialmente calcula o atraso de enfileiramento, ajudando a detectar congestionamento iminente."
+            },
+            {
+                "question": "19. O que representa a média móvel ponderada exponencialmente (EWMA)?",
+                "options": {
+                    "a": "O número absoluto de pacotes na fila",
+                    "b": "A capacidade total do buffer",
+                    "c": "Média do atraso de fila, suavizada",
+                    "d": "O tempo exato de processamento"
+                },
+                "correct": "c",
+                "explanation": "Essa média suaviza variações abruptas no tamanho da fila, sendo usada para estimar a latência com precisão."
+            },
+            {
+                "question": "20. Qual técnica envia mensagens de aviso aos transmissores sobre congestionamento?",
+                "options": {
+                    "a": "RED",
+                    "b": "ECN",
+                    "c": "FIFO",
+                    "d": "WFQ"
+                },
+                "correct": "b",
+                "explanation": "O roteador marca o pacote (sem descartá-lo) para sinalizar congestionamento; o receptor informa o emissor na resposta."
+            },
+            {
+                "question": "21. O que é RED (Random Early Detection)?",
+                "options": {
+                    "a": "Priorização de pacotes vermelhos (urgentes)",
+                    "b": "Rotear pacotes por caminhos alternativos",
+                    "c": "Descarte aleatório de pacotes antes de lotar o buffer",
+                    "d": "Marcação explícita de pacotes"
+                },
+                "correct": "c",
+                "explanation": "O objetivo é prevenir congestionamento descartando pacotes quando a média da fila ultrapassa um limite."
+            },
+            {
+                "question": "22. Qual é o princípio do corte de carga?",
+                "options": {
+                    "a": "Adicionar mais banda quando necessário",
+                    "b": "Reduzir a velocidade de transmissão",
+                    "c": "Descartar pacotes intencionalmente",
+                    "d": "Reiniciar roteadores congestionados"
+                },
+                "correct": "c",
+                "explanation": "Técnica usada como último recurso quando outras medidas falham; exige políticas inteligentes de descarte."
+            },
+            {
+                "question": "23. Na política de descarte 'do leite', o que acontece?",
+                "options": {
+                    "a": "Pacotes novos são descartados",
+                    "b": "Pacotes grandes têm prioridade",
+                    "c": "Pacotes antigos são descartados",
+                    "d": "Pacotes são descartados aleatoriamente"
+                },
+                "correct": "c",
+                "explanation": "Prioriza pacotes novos, como em transmissões em tempo real (áudio/vídeo), onde pacotes atrasados perdem valor."
+            },
+            {
+                "question": "24. Quais são os quatro parâmetros de QoS?",
+                "options": {
+                    "a": "Velocidade, confiabilidade, custo, segurança",
+                    "b": "Largura de banda, atraso, flutuação, perda",
+                    "c": "Tamanho, prioridade, origem, destino",
+                    "d": "Latência, vazão, checksum, TTL"
+                },
+                "correct": "b",
+                "explanation": "Esses parâmetros definem o desempenho de um fluxo: quanto pode ser enviado, em quanto tempo, com que regularidade e sem perdas."
+            },
+            {
+                "question": "25. Qual aplicação tem os requisitos mais rígidos de flutuação e atraso?",
+                "options": {
+                    "a": "Email",
+                    "b": "Videoconferência",
+                    "c": "Download de arquivos",
+                    "d": "Navegação web"
+                },
+                "correct": "b",
+                "explanation": "Precisa de baixa latência e baixa flutuação (jitter) para manter a sincronia entre áudio e vídeo em tempo real."
+            },
+            {
+                "question": "26. O que é sobreprovisionamento?",
+                "options": {
+                    "a": "Usar menos capacidade do que a necessária",
+                    "b": "Usar mais capacidade do que a necessária",
+                    "c": "Alocar recursos dinamicamente",
+                    "d": "Compartilhar banda entre usuários"
+                },
+                "correct": "b",
+                "explanation": "Garante QoS com sobras de recursos, mas é uma solução cara e inflexível, ideal apenas para casos críticos como telefonia."
+            },
+            {
+                "question": "27. O que é um SLA (Service Level Agreement)?",
+                "options": {
+                    "a": "Um protocolo de roteamento",
+                    "b": "Um tipo de cabo de rede",
+                    "c": "Acordo de requisitos entre provedor e cliente",
+                    "d": "Um algoritmo de escalonamento"
+                },
+                "correct": "c",
+                "explanation": "Define limites como taxa, latência e perdas que o cliente pode usar e que a rede se compromete a respeitar."
+            },
+            {
+                "question": "28. Qual é a função principal do leaky bucket?",
+                "options": {
+                    "a": "Armazenar pacotes indefinidamente",
+                    "b": "Limitar tráfego a uma taxa constante",
+                    "c": "Priorizar pacotes importantes",
+                    "d": "Detectar intrusões na rede"
+                },
+                "correct": "b",
+                "explanation": "A água (dados) sai do balde a uma taxa fixa. Se o balde está cheio, novos pacotes são descartados ou enfileirados."
+            },
+            {
+                "question": "29. Qual é a vantagem do token bucket sobre o leaky bucket?",
+                "options": {
+                    "a": "É mais simples de implementar",
+                    "b": "Permite rajadas dentro de limite",
+                    "c": "Não requer configuração",
+                    "d": "Funciona sem buffers"
+                },
+                "correct": "b",
+                "explanation": "Embora controle a taxa média, o token bucket tolera rajadas curtas, desde que não ultrapassem a capacidade do balde."
+            },
+            {
+                "question": "30. Qual unidade é usada no token bucket quando os pacotes têm tamanhos variados?",
+                "options": {
+                    "a": "Pacotes",
+                    "b": "Bits",
+                    "c": "Bytes",
+                    "d": "Segundos"
+                },
+                "correct": "c",
+                "explanation": "Em redes com pacotes de tamanho variável, o controle precisa ser feito em bytes, não em pacotes."
+            },
+            {
+                "question": "31. O que acontece se o token bucket estiver vazio?",
+                "options": {
+                    "a": "Os pacotes são descartados",
+                    "b": "O sistema para de funcionar",
+                    "c": "O envio aguarda novos tokens",
+                    "d": "A rede entra em modo de emergência"
+                },
+                "correct": "c",
+                "explanation": "Sem tokens, não é permitido enviar novos pacotes até que mais tokens (direito de envio) sejam gerados."
+            },
+            {
+                "question": "32. Por que se usa um segundo token bucket após o primeiro em alguns casos?",
+                "options": {
+                    "a": "Para aumentar a capacidade total",
+                    "b": "Para suavizar a taxa de pico",
+                    "c": "Para priorizar diferentes fluxos",
+                    "d": "Para compensar perdas"
+                },
+                "correct": "b",
+                "explanation": "Isso permite que o tráfego de saída seja ainda mais regular, impedindo rajadas maiores do que o desejado."
+            },
+            {
+                "question": "33. Qual é a função do algoritmo de escalonamento?",
+                "options": {
+                    "a": "Criptografar pacotes",
+                    "b": "Comprimir dados",
+                    "c": "Determinar a ordem de envio dos pacotes",
+                    "d": "Detectar erros"
+                },
+                "correct": "c",
+                "explanation": "Ele organiza os pacotes na fila e decide quais são transmitidos primeiro, impactando diretamente o QoS."
+            },
+            {
+                "question": "34. Como funciona o escalonamento FIFO?",
+                "options": {
+                    "a": "Prioriza pacotes pequenos",
+                    "b": "Envia pacotes por prioridade",
+                    "c": "Envia os pacotes pela ordem de chegada",
+                    "d": "Balanceia entre vários fluxos"
+                },
+                "correct": "c",
+                "explanation": "FIFO é simples, mas não garante QoS. Fluxos agressivos podem prejudicar outros que seguem regras."
+            },
+            {
+                "question": "35. O que é descarte de cauda (tail drop)?",
+                "options": {
+                    "a": "Descartar os pacotes mais antigos",
+                    "b": "Descartar pacotes aleatoriamente",
+                    "c": "Descartar os pacotes que acabaram de chegar",
+                    "d": "Descartar pacotes grandes"
+                },
+                "correct": "c",
+                "explanation": "Quando o buffer enche, os pacotes mais recentes são descartados, o que pode afetar fluxos interativos."
+            },
+            {
+                "question": "36. O que é enfileiramento com rodízio de filas?",
+                "options": {
+                    "a": "Uma fila por prioridade",
+                    "b": "Uma fila por tipo de protocolo",
+                    "c": "Cada fluxo tem uma fila e envia um pacote por rodada",
+                    "d": "Filas ordenadas por tamanho"
+                },
+                "correct": "c",
+                "explanation": "Garante justiça entre os fluxos, evitando que um monopolize a fila."
+            },
+            {
+                "question": "37. Qual é a principal falha do rodízio simples de filas?",
+                "options": {
+                    "a": "Favorece quem envia muitos pacotes pequenos",
+                    "b": "É muito complexo de implementar",
+                    "c": "Favorece quem envia pacotes maiores",
+                    "d": "Não funciona com TCP"
+                },
+                "correct": "c",
+                "explanation": "Em rodízio por pacotes, um host que envia pacotes grandes consome mais largura de banda por rodada."
+            },
+            {
+                "question": "38. O que o algoritmo WFQ (Weighted Fair Queueing) adiciona ao rodízio de filas?",
+                "options": {
+                    "a": "Criptografia",
+                    "b": "Compactação de dados",
+                    "c": "Peso aos fluxos para distribuição proporcional",
+                    "d": "Controle de congestionamento"
+                },
+                "correct": "c",
+                "explanation": "Fluxos com maior peso recebem mais recursos, ideal para dar prioridade a serviços críticos."
+            },
+            {
+                "question": "39. Qual é a desvantagem prática do WFQ?",
+                "options": {
+                    "a": "Não funciona com IPv6",
+                    "b": "Requer O(logN) por pacote",
+                    "c": "É incompatível com TCP",
+                    "d": "Não suporta QoS"
+                },
+                "correct": "b",
+                "explanation": "O ordenamento das filas por hora de término exige maior custo computacional, dificultando sua escalabilidade."
+            },
+            {
+                "question": "40. O que é o escalonamento por prioridade?",
+                "options": {
+                    "a": "Envia pacotes por ordem de tamanho",
+                    "b": "Prioriza pacotes conforme marcação de importância",
+                    "c": "Balanceia carga entre interfaces",
+                    "d": "Alterna entre protocolos diferentes"
+                },
+                "correct": "b",
+                "explanation": "Pacotes com alta prioridade são sempre enviados antes, mas pode causar inanição dos de menor prioridade."
+            }
         ];
 
         let currentQuestion = 0;
